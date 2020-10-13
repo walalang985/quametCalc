@@ -20,7 +20,7 @@ public class measureOfVariance {
 		for(int i = 0;i < data.length;i++) {
 			var += Math.pow(temp[i], 2);
 		}
-		var = var / data.length - 1;
+		var = var / data.length;
 		return var;
 	}
 	public double stdDev(double[] data) {
