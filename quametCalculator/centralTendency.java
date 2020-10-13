@@ -17,7 +17,7 @@ public class centralTendency {
         }
     }
     public double geometricMean(double[] data){
-        double temp = data[0];
+        double temp = 1;
         for(int i = 0; i < data.length;i++){
             temp *= data[i];
         }
