@@ -84,6 +84,28 @@ public class Main {
         		x = false;
         		System.exit(0);
         	}	
-    	}	
+    	}
+	    private static void contSegmentedData(double[] data) throws IOException {
+    	boolean x = true;
+    	while (x){
+    		System.out.println("Do you want to get other values for segmented data?");
+    		String a = scan.next();
+    		switch(a.toLowerCase()) {
+        	case "yes":
+        		System.out.println("What kind of ranking do you want to get");
+                String rType = scan.next();
+                System.out.println("At what position");
+                double nth = scan.nextDouble();
+                if(Double.isNaN(nth)) {
+                	throw new IOException("Sorry not a number");
+                }
+                getSegmentedData(rType, nth, data);
+                break;
+        	case "no":
+        		x = false;
+        		System.exit(0);
+        	}	
+    	}
+    }
     }
 }
