@@ -34,6 +34,7 @@ public class Main {
         double nth = scan.nextDouble();
         getSegmentedData(rType, nth, data);
         getMeasureOfVariance(data);
+    	contSegmentedData(data);
     }
     private static void getSegmentedData(String choice, double nth, double[] data){
         switch(choice.toLowerCase()) {
@@ -62,5 +63,22 @@ public class Main {
 		System.out.println("The variance is " + a.variance(data));
 		System.out.println("The standard deviation is " + a.stdDev(data));
 		System.out.println("The Coefficient of Variation is " + a.coeVariation(data) + "%");
+    }
+    private static void contSegmentedData(double[] data) throws IOException {
+    	System.out.println("Do you want to get other values for segmented data?");
+    	String a = scan.next();
+    	switch(a.toLowerCase()) {
+    	case "yes":
+    		System.out.println("What kind of ranking do you want to get");
+            String rType = scan.next();
+            System.out.println("At what position");
+            double nth = scan.nextDouble();
+            if(Double.isNaN(nth)) {
+            	throw new IOException("Sorry not a number");
+            }
+            getSegmentedData(rType, nth, data);
+    	case "no":
+    		System.exit(0);
+    	}	
     }
 }
