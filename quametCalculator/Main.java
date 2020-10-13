@@ -20,10 +20,10 @@ public class Main {
         System.out.println("The sorted data is: ");
         for(int i = 0;i < data.length;i++) {
         	if(data[i] > (int) data[i]) {
-        		System.out.print(data[i] + ", ");
+			System.out.print(data[i] + " ");
         	}
         	else {
-        		System.out.print((int)data[i]+ ", ");
+        		System.out.print((int)data[i]+ " ");
         	}
         }
         System.out.print("\n");
@@ -32,9 +32,6 @@ public class Main {
         String rType = scan.next();
         System.out.println("At what position");
         double nth = scan.nextDouble();
-        if(Double.isNaN(nth)) {
-        	throw new Exception("Sorry not a number");
-        }
         getSegmentedData(rType, nth, data);
         getMeasureOfVariance(data);
     }
